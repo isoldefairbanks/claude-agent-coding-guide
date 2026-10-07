@@ -1,0 +1,28 @@
+{
+  "modelProviders": {
+    "anthropic": [
+      {
+        "id": "claude-opus-5-5",
+        "name": "Claude Opus 5.5",
+        "envKey": "ANTHROPIC_API_KEY",
+        "baseUrl": "https://argolink.io",
+        "capabilities": {
+          "reasoning": { "profile": "anthropic-adaptive", "efforts": ["low", "medium", "high", "xhigh", "max"], "defaultEffort": "medium" }
+        },
+        "generationConfig": { "contextWindowSize": 1000000, "timeout": 300000, "samplingParams": { "max_tokens": 32000 } }
+      },
+      {
+        "id": "claude-sonnet-5",
+        "name": "Claude Sonnet 5",
+        "envKey": "ANTHROPIC_API_KEY",
+        "baseUrl": "https://argolink.io",
+        "capabilities": {
+          "reasoning": { "profile": "anthropic-adaptive", "efforts": ["low", "medium", "high", "xhigh", "max"], "defaultEffort": "high" }
+        },
+        "generationConfig": { "contextWindowSize": 1000000, "timeout": 300000, "samplingParams": { "max_tokens": 32000 } }
+      }
+    ]
+  },
+  "security": { "auth": { "selectedType": "anthropic" } },
+  "model": { "name": "claude-opus-5-5" }
+}

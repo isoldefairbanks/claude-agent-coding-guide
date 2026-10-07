@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "anthropic": {
+      "options": {
+        "baseURL": "https://argolink.io/v1",
+        "apiKey": "{env:ANTHROPIC_API_KEY}"
+      },
+      "whitelist": ["claude-opus-5-5", "claude-opus-5", "claude-sonnet-5", "claude-fable-5-1"],
+      "models": {
+        "claude-opus-5-5": { "cost": { "input": 1.6, "output": 8, "cache_read": 0.08, "cache_write": 2 } },
+        "claude-opus-5": { "cost": { "input": 2, "output": 10, "cache_read": 0.2, "cache_write": 2.5 } },
+        "claude-sonnet-5": { "cost": { "input": 0.8, "output": 4, "cache_read": 0.08, "cache_write": 1 } },
+        "claude-fable-5-1": { "cost": { "input": 4, "output": 20, "cache_read": 0.1, "cache_write": 5 } }
+      }
+    }
+  },
+  "model": "anthropic/claude-opus-5-5",
+  "small_model": "anthropic/claude-sonnet-5",
+  "agent": {
+    "plan": { "model": "anthropic/claude-opus-5-5" },
+    "build": { "model": "anthropic/claude-sonnet-5" }
+  }
+}
